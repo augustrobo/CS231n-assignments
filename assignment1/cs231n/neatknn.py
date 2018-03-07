@@ -32,6 +32,7 @@ class KNearestNeighbor(object):
         te = np.sum(X * X, axis = 1, keepdims = True)
         tr = np.sum(self.Xtrain * self.Xtrain, axis = 1, keepdims = True)
         dists = np.sqrt(-2 * np.dot(X, self.Xtrain.T) + te + tr.T)
+        return dists
 
     def predict(self, X, k = 1):
         """
